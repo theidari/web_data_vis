@@ -11,4 +11,4 @@ The dataset reveals that a small handful of microbial species (also called opera
 
 <h4>How to Use Dashboard</h4>
 
-[Dashboard](https://theidari.github.io/belly_button_biodiversity/)
+[Dashboard!](https://theidari.github.io/belly_button_biodiversity/)
