@@ -5,39 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bellybutton Biodiversity</title>
+  <title>Bellybutton Biodiversity Dashboard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="stylesheet" href="static/dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 </head>
 
 <body>
-
+<!-- header ST -->
   <div class="container-xxl">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center dash_header">
-        <h1>Belly Button Biodiversity Dashboard</h1>
+    <div class="row dash_header d-flex align-items-center justify-content-center">
+      <div class="col-md-1 jumbotron d-flex align-items-center justify-content-center dash_header_div">
+        <p class="dash_font">DASHBOARD</p>
+      </div>
+      <div class="col-sm-4 jumbotron text-left header_div">
+        <h1>Belly Button Biodiversity</h1>
         <p>Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Demographic Info</h3>
-          </div>
+  </div> 
+<!-- header END -->
+<!-- navbar ST -->
+  <div class="topnav">
+    <a href="#home" class="active">Dashboard</a>
+    <a href="#news">About</a>
+    <a href="https://github.com/theidari/belly_button_biodiversity">GitHub Repository</a>
+    <button onclick="window.open('http://robdunnlab.com/projects/belly-button-biodiversity/')" class="btn danger">BELLY BUTTON BIODIVERSITY PROJECT</button>
+  </div>
+<!-- navbar END -->
+<!-- body ST -->
+  <div class="container">
+    <!-- first section ST -->
+    <div class="row pad_dist d-flex align-items-center justify-content-center">
+      <div class="col-md-8 d-flex align-items-center justify-content-center intro_text">
+        <p>select your sample number from the dropdown menu. 
+          Hover over the pie pieces to see the relative abundance of a given species.
+           Click the buttons next to the species names to remove dominant species and reveal smaller 
+           pieces of the pie.</br>
+          What species are present in your navel? What is the relative abundance of your common species?
+           Do some species dominate more than others? Who are these species? You can learn more by reading 
+           profiles of the most common species.</br>
+          Compare yourself to the "average" belly button to the right.</br> 
+          How different or similar are you? Browse the charts of other participants. 
+          What species do you have in common with others? Are your common species more or less abundant 
+          than those found in others? What factors do you think might be shaping these differences? Can't 
+          find your sample? We analyzed belly button samples in two batches and thus built two different 
+          interactive pie charts. We recommend checking out the other interactive chart for your sample. 
+          Tried that and still can't find your sample? Unfortunately, this means that something happened in the 
+          analysis pipeline such that we failed to get good quality DNA from your sample. This happens from 
+          time to time when we process a lot of samples. In some ways, our molecular approach is kind of like 
+          baking. If you make hundreds of cakes, every once in a while one just doesn't come out right.
+        </p>
+      </div>
+      <div class="col-md-4 dropdown_div d-flex align-items-center justify-content-center">
+        <!-- test Id dropdown ST -->
+        <div class="well pad_dist">
+          <h5 class="dropdown_header">Select Test</h5>
+          <select id="selDataset" class="dropdown_shape" onchange="optionChanged(this.value)"></select>
+          <!-- test Id dropdown END -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">DEMOGRAPHIC INFO.</h3>
+            </div>
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-5">
+    </div>
+    </div>
+    <!-- first section END -->
+    <!-- second section ST -->
+      <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-8">
         <div id="bar"></div>
       </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <div class="well">
+          <div class="gauge-chart intro_text">
+            <p>
+              Washing Frequency (belly button scrubs per week) average is : 2.83 with confidence interval of 
+              0.48 for 138 data out of 153 test
+            </p>
+          </div>
+          <div id="gauge"></div> 
+        </div>
     </div>
     <div class="row">
       <div class="col-md-12">
