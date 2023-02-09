@@ -27,7 +27,8 @@
 <!-- header END -->
 <!-- navbar ST -->
   <div class="topnav">
-    <a href="#home" class="active">Dashboard</a>
+    <a href="https://theidari.github.io/belly_button_biodiversity/" class="active">Dashboard</a>
+    <a href="http://robdunnlab.com/projects/belly-button-biodiversity/most-common/">Common BB Bacteria</a>
     <a href="#news">About</a>
     <a href="https://github.com/theidari/belly_button_biodiversity">GitHub Repository</a>
     <button onclick="window.open('http://robdunnlab.com/projects/belly-button-biodiversity/')" class="btn danger">BELLY BUTTON BIODIVERSITY PROJECT</button>
@@ -38,24 +39,21 @@
     <!-- first section ST -->
     <div class="row pad_dist d-flex align-items-center justify-content-center">
       <div class="col-md-8 d-flex align-items-center justify-content-center intro_text">
-        <p>select your sample number from the dropdown menu. 
-          Hover over the pie pieces to see the relative abundance of a given species.
-           Click the buttons next to the species names to remove dominant species and reveal smaller 
-           pieces of the pie.</br>
-          What species are present in your navel? What is the relative abundance of your common species?
-           Do some species dominate more than others? Who are these species? You can learn more by reading 
-           profiles of the most common species.</br>
-          Compare yourself to the "average" belly button to the right.</br> 
-          How different or similar are you? Browse the charts of other participants. 
-          What species do you have in common with others? Are your common species more or less abundant 
-          than those found in others? What factors do you think might be shaping these differences? Can't 
-          find your sample? We analyzed belly button samples in two batches and thus built two different 
-          interactive pie charts. We recommend checking out the other interactive chart for your sample. 
-          Tried that and still can't find your sample? Unfortunately, this means that something happened in the 
-          analysis pipeline such that we failed to get good quality DNA from your sample. This happens from 
-          time to time when we process a lot of samples. In some ways, our molecular approach is kind of like 
-          baking. If you make hundreds of cakes, every once in a while one just doesn't come out right.
-        </p>
+        <div class="well pad_dist">
+          <p>Please select your desired sample number from the drop-down menu. 
+            By hovering over the <span class="keywords-ID">BAR</span> and <span class="keywords-ID">BUBBLE</span> pieces, you can view the proportional abundance of a particular species.
+            <ol>
+            <li>What species are present in your navel?</li>
+            <li>What is the relative abundance of your common species?</li>
+            <li>Do some species dominate more than others?</li>
+            <li>Who are these species?</li>
+            </ol>
+            To gain further insight, we recommend exploring the profiles of <a class="keywords-ID" href="http://robdunnlab.com/projects/belly-button-biodiversity/most-common/">common BB bacteria ⍈</a>. 
+            Compare your results to the <a class="keywords-ID" href="http://robdunnlab.com/yourbacteria/batchtwo.html">average ⍈</a> belly button diversity. 
+            Observe how distinct or similar your results are. Examine the charts of other participants to see which species you have in common. 
+            Consider the abundance of these common species in comparison to others. Reflect on potential factors that could influence these differences.
+          </p>
+        </div>
       </div>
       <div class="col-md-4 dropdown_div d-flex align-items-center justify-content-center">
         <!-- test Id dropdown ST -->
@@ -74,7 +72,7 @@
     </div>
     <!-- first section END -->
     <!-- second section ST -->
-      <div class="row d-flex align-items-center justify-content-center">
+    <div class="row d-flex align-items-center justify-content-center">
       <div class="col-md-8">
         <div id="bar"></div>
       </div>
@@ -88,8 +86,9 @@
           </div>
           <div id="gauge"></div> 
         </div>
+      </div>
     </div>
-    <div class="row">
+    <div class="row d-flex align-items-center justify-content-center bubble-section pad_dist">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>

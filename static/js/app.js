@@ -14,6 +14,7 @@ function getName() {
                 // Initialize page with default metadata and plots   
                 getMetadata(subject.names[0]),
                 getBar(subject.names[0]),
+                getBubble(subject.names[0]),
                 getGauge(subject.names[0])
             ),
         );
@@ -23,6 +24,7 @@ function getName() {
 function optionChanged(id) {
     getMetadata(id);
     getBar(id);
+    getBubble(id);
     getGauge(id);
 };
 
@@ -57,7 +59,12 @@ function getBar(id) {
           x: sortedSample.sample_values.slice(0, 10).reverse(),
           y: sortedSample.otu_ids.slice(0, 10).map(otuid => `OTU ${otuid}`).reverse(),
           text: sortedSample.otu_labels.slice(0, 10).reverse(),
-          hoverlabel: { font: { size: 10 } },
+          hovertemplate:"<b>%{yaxis.title.text}:</b> %{y}<br>"+
+          "<b>%{xaxis.title.text}:</b> %{x}<br>"+
+          "<b>Bacteria:</b> %{text}"+
+          "<extra></extra>",
+          hovermode: "closest",
+          hoverlabel: { font: { size: 12 ,color: "#151518", family: "calibri"},bgcolor: "#f2f2f2",bordercolor:"#71594d"},
           marker: {
             color: '#c83026',
             opacity: 0.7,
@@ -68,25 +75,73 @@ function getBar(id) {
   
         Plotly.newPlot('bar', [barTrace], {
           title: {text: `Top 10 Operational Taxonomic Units`,font: { size: 16, color: '#22666a', family: 'calibri'}},
-          height: 500,
+          height: 400,
           width: 600,
           xaxis: {
             tickwidth: 10,
             tickcolor: '#ffffff',
             tickfont: { family: 'calibri', color: 'black' },
-            title: {text: "Sample Values", font: {size: 16, color: '#22666a', family: 'calibri'}}
+            title: {text: "Sample Values", font: {size: 14, color: '#151518', family: 'calibri'}}
           },
           yaxis: {
             automargin: true,
             tickwidth: 20,
             tickcolor: '#71594d',
             tickfont: { family: 'calibri', color: '#71594d'},
-            title: {text: 'Operational Taxonomic Units',font: {size: 16, color: '#22666a', family: 'calibri'}}
+            title: {text: 'Operational Taxonomic Units',font: {size: 14, color: '#151518', family: 'calibri'}}
+          },
+          margin: {l: 50, r: 50, b: 50, t: 20, pad: 0
           }
         });
       });
   }  
 // ----------------------------------------------------------------------------------------------
+// Bubble chart
+function getBubble(id) {
+  d3.json(url).then(data => {
+    const sortedSample = data.samples.filter(sample => sample.id === id)[0];
+    const bubbleTrace = {
+      x: sortedSample.otu_ids,
+      y: sortedSample.sample_values,
+      text: sortedSample.otu_labels,
+      hovertemplate:"<b>%{xaxis.title.text}:</b> %{x}<br>"+
+          "<b>%{yaxis.title.text}:</b> %{y}<br>"+
+          "<b>Bacteria:</b> %{text}"+
+          "<extra></extra>",
+      hovermode: "closest",
+      hoverlabel: { font: { size: 12 ,color: "#151518", family: "calibri"},bgcolor: "#f2f2f2",bordercolor:"#71594d"},
+      mode: 'markers',
+      marker: {
+        size: sortedSample.sample_values,
+        color: sortedSample.otu_ids,
+        colorscale: 'RdBu',
+        opacity: 0.7,
+        line: {
+          color: '#71594d',
+          width: 0.5
+        }
+      }
+    };
+    Plotly.newPlot('bubble',[bubbleTrace],{
+        plot_bgcolor: "#f2f2f2",
+        paper_bgcolor: "#f2f2f2",
+        title: {text: `Belly Button Biodiversity`,font: { size: 16, color: '#22666a', family: 'calibri'}},
+        height: 750,
+        width: 1100,
+        xaxis: {
+          tickfont: { family: 'calibri', color: '#71594d'},
+          title: {text: 'Operational Taxonomic Units',font: {size: 14, color: '#151518', family: 'calibri'}}
+        },
+        yaxis: {
+          automargin: true,
+          tickfont: { family: 'calibri', color: '#71594d'},
+          title: {text: 'Sample Values',font: {size: 14, color: '#151518', family: 'calibri'}}
+        },
+        margin: {l: 50, r: 50, b: 70, t: 50, pad: 0}
+        });
+  });
+}
+
 // Gauge chart ----------------------------------------------------------------------------------
 function getGauge(id) {
     d3.json(url)
