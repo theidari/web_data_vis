@@ -14,25 +14,31 @@
 <body>
 <!-- header ST -->
   <div class="container-xxl">
-    <div class="row dash_header d-flex align-items-center justify-content-center">
-      <div class="col-md-1 jumbotron d-flex align-items-center justify-content-center dash_header_div">
-        <p class="dash_font">DASHBOARD</p>
+    <div class="row dash-header d-flex align-items-center justify-content-center">
+      <div class="col-sm-1 d-flex align-items-center justify-content-center">
+        <div class="dash-header-div d-flex align-items-center justify-content-center">
+          DASHBOARD
+        </div>
       </div>
-      <div class="col-sm-4 jumbotron text-left header_div">
+      <div class="col-sm-4 d-flex align-items-center justify-content-left">
+        <div class="header_div text-left">
         <h1>Belly Button Biodiversity</h1>
         <p>Use the interactive charts below to explore the dataset</p>
+        </div>
       </div>
     </div>
   </div> 
 <!-- header END -->
 <!-- navbar ST -->
+<div class="container-xxl">
   <div class="topnav">
     <a href="https://theidari.github.io/belly_button_biodiversity/" class="active">Dashboard</a>
     <a href="http://robdunnlab.com/projects/belly-button-biodiversity/most-common/">Common BB Bacteria</a>
-    <a href="#news">About</a>
+    <a href="http://robdunnlab.com/projects/belly-button-biodiversity/">About</a>
     <a href="https://github.com/theidari/belly_button_biodiversity">GitHub Repository</a>
-    <button onclick="window.open('http://robdunnlab.com/projects/belly-button-biodiversity/')" class="btn danger">BELLY BUTTON BIODIVERSITY PROJECT</button>
+    <button onclick="window.open('http://robdunnlab.com/projects/belly-button-biodiversity/')" class="btn danger">BB BIODIVERSITY PROJECT</button>
   </div>
+</div>
 <!-- navbar END -->
 <!-- body ST -->
   <div class="container">
@@ -40,7 +46,9 @@
     <div class="row pad_dist d-flex align-items-center justify-content-center">
       <div class="col-md-8 d-flex align-items-center justify-content-center intro_text">
         <div class="well pad_dist">
-          <p>Please select your desired sample number from the drop-down menu. 
+          <p>
+            We have initiated the process for you. It is now time for you to embark on a journey of self-discovery, exploring your navel.<br>
+            Please select your desired sample number from the drop-down menu. 
             By hovering over the <span class="keywords-ID">BAR</span> and <span class="keywords-ID">BUBBLE</span> pieces, you can view the proportional abundance of a particular species.
             <ol>
             <li>What species are present in your navel?</li>
@@ -58,9 +66,10 @@
       <div class="col-md-4 dropdown_div d-flex align-items-center justify-content-center">
         <!-- test Id dropdown ST -->
         <div class="well pad_dist">
-          <h5 class="dropdown_header">Select Test</h5>
+          <h5 class="dropdown_header d-flex align-items-center justify-content-center">Test Subject ID</h5>
           <select id="selDataset" class="dropdown_shape" onchange="optionChanged(this.value)"></select>
           <!-- test Id dropdown END -->
+          <!-- metadata ST -->
           <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">DEMOGRAPHIC INFO.</h3>
@@ -70,36 +79,73 @@
       </div>
     </div>
     </div>
-    <!-- first section END -->
-    <!-- second section ST -->
+    <!-- metadata END -->
     <div class="row d-flex align-items-center justify-content-center">
+      <!-- bar ST -->
       <div class="col-md-8">
         <div id="bar"></div>
       </div>
+      <!-- bar END -->
+      <!-- gauge ST -->
       <div class="col-md-4 d-flex align-items-center justify-content-center">
         <div class="well">
           <div class="gauge-chart intro_text">
             <p>
-              Washing Frequency (belly button scrubs per week) average is : 2.83 with confidence interval of 
-              0.48 for 138 data out of 153 test
+              The average frequency of washing belly button scrubs per week, as determined through a study of 
+              <b><ins>153</ins></b> test subjects, was found to be <b><ins>2.83</ins></b> (<span class="span-line">⬛</span> line), 
+                with a margin of error of <b><ins>0.48</ins></b> (- <span class="span-red">⬛</span> and + <span class="span-green">⬛</span>).
             </p>
           </div>
           <div id="gauge"></div> 
         </div>
       </div>
+      <!-- gauge END -->
     </div>
-    <div class="row d-flex align-items-center justify-content-center bubble-section pad_dist">
-      <div class="col-md-12">
+    <!-- bubble ST -->
+    <div class="row d-flex align-items-center justify-content-center pad_dist">
+      <div class="col-md-12 intro_text">
+        <P>
+          The <a class="keywords-ID" href="https://www.cd-genomics.com/microbioseq/operational-taxonomic-unit-otu-and-otu-clustering.html#:~:text=Operational%20taxonomic%20unit%20or%20OTU,to%20the%20formal%20taxonomic%20units.">Operational Taxonomic Unit (OTU) ⍈</a> 
+          is considered as the fundamental unit employed in numerical taxonomy. 
+          These units may pertain to an organism, species, genus, or class. It is important to note that the taxonomic 
+          units utilized in numerical methods may not align with the formal taxonomic units. The belly button diversity 
+          bubble plot showcases all of the OTUs present in a sample, displaying their respective values.
+      </div>
+      <div class="col-md-12 bubble-section">
         <div id="bubble"></div>
       </div>
     </div>
+    <div class="row pad_dist"></div>
+    <!-- bubble END -->
   </div>
+    <!-- Footer ST -->
+  <div class="container-xxl">
+    <div class="row dash-header d-flex align-items-center justify-content-center">
+      <div class="col-sm-12 jumbotron text-center header_div">
+        <p>© 2023 Ali T. Heidari | Interactive Visualizations Project | University of Toronto</p>
+        <p>
+          <a href="https://github.com/theidari" target="_blank">
+          <img class="footer-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" alt="github">
+          </a>
+          <a href="https://stackoverflow.com/users/20154921/ali-taghipour-heidari" target="_blank">
+          <img class="footer-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg" alt="stackoverflow">
+          </a>
+          <a href="https://www.linkedin.com/in/theidari/" target="_blank">
+          <img class="footer-logo" src="https://simpleicons.org/icons/linkedin.svg">
+          </a>
+          <a href="mailto:theidari.ali@gmail.com" target="_blank">
+          <img class="footer-logo" src="https://simpleicons.org/icons/gmail.svg" alt="gmail">
+          </a>
+        </p>
+      </div>
+    </div>
+  </div> 
+    <!-- Footer END-->
+  
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/app.js"></script>
-  <script src="./static/js/bonus.js"></script>
-  
+  <script src="./static/js/app.js"></script>  
 </body>
 
 </html>

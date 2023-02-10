@@ -1,36 +1,33 @@
+// set url 
 const url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json'
-
-function getName() {
-    // Select dropdown menu id and assign it to a variable
-    var dropdownMenu = d3.select('#selDataset');
-    // Read "names" values from json file and append into dropdown menu
+// get name function for selecting names from data and making dropdown menu and initializing plot
+function get_name() {
+    var dropdown_menu = d3.select('#selDataset');
     d3.json(url)
         .then(subject => subject.names
-            .forEach(name => dropdownMenu
+            .forEach(name => dropdown_menu
                 .append('option')
                 .text(name)
                 .property('value'),
-
-                // Initialize page with default metadata and plots   
-                getMetadata(subject.names[0]),
-                getBar(subject.names[0]),
-                getBubble(subject.names[0]),
-                getGauge(subject.names[0])
+                get_metadata(subject.names[0]),
+                get_bar(subject.names[0]),
+                get_bubble(subject.names[0]),
+                get_gauge(subject.names[0])
             ),
         );
 };
 
-// Function called by DOM changes
+// option change function
 function optionChanged(id) {
-    getMetadata(id);
-    getBar(id);
-    getBubble(id);
-    getGauge(id);
+    get_metadata(id);
+    get_bar(id);
+    get_bubble(id);
+    get_gauge(id);
 };
+// ----------------------------------------------------------------------------------------------
 
-// -------------------------------- Demographic Info -----------------------------------------------
-function getMetadata(id) {
-    // Read "metadata" from json file for each subject and assign it to a variable
+// Demographic Info -----------------------------------------------------------------------------
+function get_metadata(id) {
     d3.json(url)
     .then(({ metadata }) => {
       const subjectData = metadata.find(subject => subject.id.toString() === id);
@@ -48,10 +45,11 @@ function getMetadata(id) {
       });
     });
   };
-getName();
+get_name();
 // ----------------------------------------------------------------------------------------------
-// Bar chart
-function getBar(id) {
+
+// Bar chart ------------------------------------------------------------------------------------
+function get_bar(id) {
     d3.json(url)
       .then(data => {
         const sortedSample = data.samples.filter(sample => sample.id === id)[0];
@@ -96,8 +94,9 @@ function getBar(id) {
       });
   }  
 // ----------------------------------------------------------------------------------------------
-// Bubble chart
-function getBubble(id) {
+
+// Bubble chart ---------------------------------------------------------------------------------
+function get_bubble(id) {
   d3.json(url).then(data => {
     const sortedSample = data.samples.filter(sample => sample.id === id)[0];
     const bubbleTrace = {
@@ -109,7 +108,7 @@ function getBubble(id) {
           "<b>Bacteria:</b> %{text}"+
           "<extra></extra>",
       hovermode: "closest",
-      hoverlabel: { font: { size: 12 ,color: "#151518", family: "calibri"},bgcolor: "#f2f2f2",bordercolor:"#71594d"},
+      hoverlabel: { font: { size: 12 ,color: "#151518", family: "calibri"},bgcolor: "#ffffff",bordercolor:"#71594d"},
       mode: 'markers',
       marker: {
         size: sortedSample.sample_values,
@@ -141,9 +140,10 @@ function getBubble(id) {
         });
   });
 }
+// ----------------------------------------------------------------------------------------------
 
 // Gauge chart ----------------------------------------------------------------------------------
-function getGauge(id) {
+function get_gauge(id) {
     d3.json(url)
         .then(data => {
             var subjectData = data.metadata.filter(subject => subject.id.toString() === id)[0];

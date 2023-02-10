@@ -1,181 +1,244 @@
-.dash_header{
-    background-image:url(https://raw.githubusercontent.com/theidari/belly_button_biodiversity/main/asset/header_black_wallpaper.jpg);
-    height:180px;
+:root{
+    /* colors */
+    --blue:          #0800ff;
+    --textblack:     #000000;
+    --cararra:       #ffa600;
+    --woodsmoke:     #151518;
+    --hippie-blue:   #5aa9b5;
+    --tall-poppy:    #c83026;
+    --roman-coffee:  #71594d;
+    --paradiso:      #22666a;
+    --astral:        #387aa6;
+    --mondo:         #42312a;
+    --rhino:         #364168;
+    --aliceblue:     #f0f8ff;
+    --white:         #ffffff;
+    --transparent-w: #ffffff00; 
+    --main-gray:     #f2f2f2;
+    --darkred:       #760f07; 
+    /* fonts */
+    --textfont: 'Lato';
 }
-.dash_header_div{
-    background-color: #ce3739;
-    color: aliceblue;
+
+body{
+    background-color: var(--white);
 }
-.dash_font{
-    font-size: 30px;
+/* top bottom padding */
+.pad_dist {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* paragraph font and align */
+.intro_text{
+    text-align: justify;
+    font-family: var(--textfont);
+}
+/* paragraph main keywords */
+.keywords-ID{
+    color: var(--tall-poppy);
     font-weight: bold;
 }
-.header_div{
-    background-color: #ffffff00;
-    color: aliceblue;
+/* hearder ------------------------------------------------------------------------------------- */
+/* header backgroung img and size */
+.dash-header{
+    background-image: url(https://raw.githubusercontent.com/theidari/belly_button_biodiversity/main/asset/header_black_wallpaper.jpg);
+    height:180px;
 }
+/* dashboard logo section */
+.dash-header-div{
+    background-color: var(--tall-poppy);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 30px;
+    height: 80px;
+    width: 250px;
+}
+/* title and description */
+.header_div{
+    background-color: var(--transparent-w);
+    color: var(--white);
+    height: 80px;
+    width: 500px;
+
+}
+/* bootstap jumbotron modification */
 .jumbotron {
     font-size: 20px;
     padding: 40px;
 }
-/* Add a black background color to the top navigation */
+/* --------------------------------------------------------------------------------------------- */
+
+/* navigation ---------------------------------------------------------------------------------- */
 .topnav {
-    background-color: #f2f2f2;
+    background-color: var(--main-gray);
     overflow: hidden;
-    border-bottom: 1px groove black;
+    border-bottom: 1px groove var(--textblack);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    display: block;
-    color: #000000;
+/* style the links inside the navigation bar */
+.topnav a {
+    color: var(--textblack);
+    display: inline-block;
     text-align: center;
+    text-decoration: none; /* remove the underline from link*/
+    font-family: var(--textfont);
+    font-size: 16px;
     padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
     border-top: 3px solid transparent;
     margin: 0 10px;
-    display: inline-block;
-    text-align: center;
   }
   
-  .topnav a:hover {
-    border-top: 3px solid #ce3739;
-    color: #ce3739;
+.topnav a:hover {
+    border-top: 3px solid var(--tall-poppy);
+    color: var(--tall-poppy);
   }
-
+/* style the btn inside the navigation bar */
 .btn {
     border: none; 
-    color: white; 
+    color: var(--white); 
     font-size: 12px;
+    font-family: var(--textfont);
     font-weight: bolder;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 6px 4px 6px 4px; 
     cursor: pointer; 
-    margin: 0 150px;
+    margin: 0 200px;
     display: inline-block;
 }
-.danger {background-color: #ce3739;} 
-.danger:hover {background: #da190b;}
-
-/* dropdown section */
-.pad_dist {
-    padding-top: 20px;
-    padding-bottom: 20px;
+/* bootstap danger modification */
+.danger {
+    background-color: var(--tall-poppy);
+} 
+/* bootstap danger:hover modification */
+.danger:hover {
+    background: var(--darkred);
+    color:var(--aliceblue);
 }
+
+/* --------------------------------------------------------------------------------------------- */
+/* dropdown section ---------------------------------------------------------------------------- */
+/* dropdown main div */
 .dropdown_div {
-    background-color: #f2f2f2;
-    width: 1000;
+    background-color: var(--main-gray);
+    width: 500;
     height: 500;
-    border: 1px solid #000000;
+    border: 1px solid var(--textblack);
     border-radius: 5px;
 }
+/* dropdown header */
 .dropdown_header {
     text-align: center;
     width:230px;
-    font-size: small;
+    height: 28px;
+    font-size: 16px;
     font-weight: bold;
-    color:#ce3739;
-    
+    font-family: var(--textfont);
+    color:var(--tall-poppy);
+    border-bottom: 2px solid var(--tall-poppy);
 }
+/* dropdown selection area */
 .dropdown_shape {
     width:230px;
     height: 30px;
-    border: 1px solid #000000;
+    border: 1px solid var(--textblack);
     border-radius: 5px;
     text-align: center;
-    background-color: #ffffff;
-}
-.dropdown_shape option::before{
-        color: rgb(0, 0, 0);
-      }
-
-.dropdown_shape option ::after {
-        color: rgb(255, 0, 0);
-        background-color: #ce3739;
-      }
-
-.intro_text{
-    text-align: justify;
+    background-color: var(--white);
     font-family: var(--textfont);
+    cursor: pointer; 
 }
+/* --------------------------------------------------------------------------------------------- */
+
+/* metadata section ---------------------------------------------------------------------------- */
+/* main section */
 .panel {
     padding-top: 10px;
 }
+/* header */
 .panel-heading{
-    background-color: #ce3739;
+    background-color: var(--tall-poppy);
     text-align: center;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    border: 1px solid #000000;
+    border: 1px solid var(--textblack);
     border-bottom: 0px solid;
 }
 .panel-title{
-    background-color: #ce3739;
-    color: #ffffff;
+    background-color: var(--tall-poppy);
+    color: var(--white);
     font-size: 14px;
     font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--textfont);
     display: inline-block;
+    height: 15px;
 }
+/* table */
 .panel-body{
     font-size: 14px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:var(--textfont);
     font-weight: lighter;
     line-height:  0.8em;
     margin: 0 auto;
-    border: 1px solid #000000;
+    border: 1px solid var(--textblack);
     border-top: 0px solid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background: #fff;
+    background: var(--white);
     padding: 10px 5px 5px 5px;
     width: 230px;
   }
-
+/* table keys */
 .panel-keys{
-    color: #ce3739;
+    color: var(--tall-poppy);
     font-family:var(--textfont);
     font-weight: bold;
     line-height: 25px;
     text-transform: uppercase;
-
 }
+/* table values */
 .panel-values{
     color: var(--textblack);
     font-size: small;
     text-transform: capitalize;
     font-family: var(--textfont);
 }
+/* --------------------------------------------------------------------------------------------- */
+
+/* gauge section ------------------------------------------------------------------------------- */
+/* main section */
 .gaugechart {
     font-size: 14px;
     font-family: var(--textfont);
     color: var(--paradiso);
 }
-:root{
-    /* CSS HEX */
-    --blue: #0800ff;
-    --textblack: #000000;
-    --cararra: #ffa600;
-    --woodsmoke: #151518;
-    --hippie-blue: #5aa9b5;
-    --tall-poppy: #c83026;
-    --roman-coffee: #71594d;
-    --paradiso: #22666a;
-    --astral: #387aa6;
-    --mondo: #42312a;
-    --rhino: #364168;
-    --textfont: 'Lato';
+.span-line {
+    filter: invert(59%) sepia(82%) saturate(1015%) hue-rotate(360deg) brightness(102%) contrast(104%);
 }
+.span-red{
+    filter: invert(15%) sepia(92%) saturate(2438%) hue-rotate(353deg) brightness(125%) contrast(80%);
+}
+.span-green{
+    filter: invert(66%) sepia(9%) saturate(1805%) hue-rotate(140deg) brightness(90%) contrast(94%);  
+}
+/* --------------------------------------------------------------------------------------------- */
+
+/* bubble section ------------------------------------------------------------------------------ */
 .bubble-section{
     border-radius: 5px;
     border: 1px solid var(--textblack);
-    background-color:#f2f2f2;
+    background-color: var(--main-gray);
 }
-.keywords-ID{
-    color: var(--tall-poppy);
-    font-weight: bold;
+/* --------------------------------------------------------------------------------------------- */
+
+/* footer section ------------------------------------------------------------------------------ */
+.footer-logo{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    height: 40px;
+    width: 40px;
+    padding-right: 15px;
+    display:inline-block;
+    font-size: 0;
 }
+/* --------------------------------------------------------------------------------------------- */
