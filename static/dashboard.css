@@ -50,16 +50,19 @@ body{
     color: var(--white);
     font-weight: bold;
     font-size: 30px;
-    height: 80px;
-    width: 250px;
+    height:5vw;
+    width: 20vw;
 }
 /* title and description */
 .header_div{
     background-color: var(--transparent-w);
     color: var(--white);
-    height: 80px;
-    width: 500px;
+    height: 5vw;
+    width: 40vw;
 
+}
+.main_header {
+    margin-left: 20px;
 }
 /* bootstap jumbotron modification */
 .jumbotron {
@@ -79,6 +82,20 @@ body{
   }
   
 /* style the links inside the navigation bar */
+.navbar {
+    padding: 0;
+}
+
+.nav-item{
+    height: 40px;
+    align-items: center;
+}
+
+.nav-item-btn{
+    height: auto;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
 .topnav a {
     color: var(--textblack);
     display: inline-block;
@@ -88,13 +105,21 @@ body{
     font-size: 16px;
     padding: 14px 16px;
     border-top: 3px solid transparent;
-    margin: 0 10px;
+    margin: 0 20px;
+    padding: 0;
   }
   
 .topnav a:hover {
     border-top: 3px solid var(--tall-poppy);
     color: var(--tall-poppy);
   }
+
+.nav-disabled {
+    color: var(--main-gray);
+    border-top: 3px solid transparent;
+    margin: 0px 0px 0px 0px
+
+}
 /* style the btn inside the navigation bar */
 .btn {
     border: none; 
@@ -104,7 +129,6 @@ body{
     font-weight: bolder;
     padding: 6px 4px 6px 4px; 
     cursor: pointer; 
-    margin: 0 200px;
     display: inline-block;
 }
 /* bootstap danger modification */
