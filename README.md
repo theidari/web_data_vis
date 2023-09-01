@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/header_main.png"></p>
+<p align="center"><img src="./assets/header_main.png" width=500px></p>
 
 <h3>Belly Button Biodiversity</h3>
 
