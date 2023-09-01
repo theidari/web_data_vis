@@ -1,0 +1,282 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display"); 
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("href='https://fonts.googleapis.com/css?family=Roboto");
+
+:root {
+  /* colors */
+  --o-blue    : #3e5e7e;
+  --l--blue   : #0059ff;
+  --m-white   : #ffffff;
+  --m-gray    : #f2f2f2;
+  --m-black   : #000000;
+  --l--black  : #00000044;
+  --d-gray    : #666565;
+  --s-gray    : #888888;
+  --m-red     : #f10808;
+
+  /* fonts */
+  --font-lato : 'Lato';
+  --font-playfair-display: 'Playfair Display';
+  --font-roboto: 'Roboto'
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map{
+  height: 96.5%;
+}
+.map-popup {
+  font-family: var(--font-playfair-display);
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  width: 340px;
+}
+.map-popup-warning {
+  background-color: var(--m-white);
+  color: var(--m-red);
+  border: 1px solid var(--m-black);
+  border-radius: 2px;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-lato);
+  width: 340px;
+}
+
+.map-popup-exp {
+  font-size: 14px;
+  line-height: 2;
+}
+.map-popup-exp span{
+  color: var(--o-blue);
+  font-weight: 700;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--m-gray);
+  border-radius: 5px;
+  font-family: var(--font-lato);
+  font-size: 12px;
+  width: 380px;
+  justify-content: center;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.navbar{
+  background: var(--o-blue);
+}
+
+.logo {
+  filter: invert(99%) sepia(0%) saturate(0%) hue-rotate(200deg) brightness(100%) contrast(104%);
+  padding-right: 10px;
+  margin:0 0 0 0 ;
+}
+
+.btn {
+  padding: 0 0 0 0;
+}
+
+.modal-content {
+  border-radius: 0;
+  background: var(--m-gray);
+  margin-left: auto;
+}
+
+.modal-dialog {
+  width: 435px;
+  position:fixed;
+  top: 18px;
+  right:0;
+  left:auto;
+  bottom:auto;
+}
+.modal-title {
+  font-family: var(--font-playfair-display);
+  font-weight:700;
+}
+/* about */
+.about-pop {
+  font-family: var(--font-lato);
+  font-size: 14px;
+}
+
+/* accordion */
+.accordion-button {
+  font-family: var(--font-lato);
+}
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background-color: var(--m-gray);
+  color: var(--o-blue);
+  font-family: var(--font-lato);
+  font-weight: 500;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body h6 {
+  font-family: var(--font-lato);
+  font-size: 14px;
+  color: var(--m-white);
+  border: 1px groove var(--o-blue);
+  border-radius: 5px;
+  box-shadow: 2px 4px 100px var(--s-gray) ;
+  background: var(--o-blue);
+  text-align: center;
+  text-transform: uppercase;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.accordion-body td,tbody,tr,th {
+  font-family: var(--font-lato);
+  font-size: 12px;
+  color: var(--m-black);
+  text-align: start;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.accordion-body li,p {
+  text-align: justify;
+}
+
+.btn-feedback {
+  text-decoration: none;
+  background-color: var(--o-blue);
+  color: var(--m-white);
+  padding: 2px 2px 2px 2px;
+  border-radius: 5px;
+}
+
+.btn-feedback:hover {
+  background-color: var(--m-white);
+  color: var(--m-black);
+  font-weight: bold;
+  border: 1px groove var(--d-gray);
+}
+
+.modal-footer {
+  align-items: center;
+  justify-content: center;
+}
+.modal-footer td,tbody,tr {
+  font-size: 12px;
+  color: var(--d-gray);
+  text-align: center;
+}
+.modal-footer a {
+  filter: invert(42%) sepia(0%) saturate(2%) hue-rotate(347deg) brightness(93%) contrast(94%);
+  height: 30px;
+  width: 30px;
+  padding-right: 10px;
+  display:inline-block;
+  font-size: 0;
+}
+
+/* leaflet control panel */
+.leaflet-control-layers-toggle {
+  border-radius: 5px;
+  border: 0px solid var(--m-black);
+  background-color: var(--m-gray);
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.leaflet-control-layers-toggle:hover {
+  background-color: var(--s-gray);
+}
+.leaflet-control-layers {
+  border:0px solid var(--m-black);
+  background-color: var(--m-gray);
+  align-items: center;
+  justify-content: center;
+}
+.leaflet-control-layers-expanded {
+  border:0px solid var(--m-black);
+  border-radius: 0%;
+  background-color: var(--m-white);
+  width: 200px;
+  height: 220px;
+  color: var(--m-black);
+  font-size: 14px;
+  font-family: var(--font-lato);
+}
+
+/* Custom CSS for the easy button */
+.easy-button-container {
+  position: absolute;
+  bottom: -40px;
+  right: 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+#legend-button {
+  border-radius: 5px;
+  border:0px solid var(--m-black);
+  background-color: var(--m-gray);
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+#legend-button:hover {
+  background-color: var(--s-gray);
+}
+
+.button-keys {
+  filter: invert(74%) sepia(2%) saturate(11%) hue-rotate(352deg) brightness(89%) contrast(83%);
+  transform: rotate(-90deg);
+  padding-right: 5px;
+  padding-top: 0px;
+}
+
+.legend {
+  font-family: var(--font-lato);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--m-black);
+  background-color: var(--m-white);
+  padding: 10px;
+  border: 3px solid var(--l--black);
+  justify-content: center;
+  width: 200px;
+} 
+
+.legend p{
+  font-family: var(--font-lato);
+  font-size: 16px;
+  color: var(--m-black);
+  font-weight: 700;
+  text-align: center
+}
+
+@-moz-document url-prefix() {
+  .easy-button-container {
+    bottom: -50px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--m-gray);
+  }
+}
