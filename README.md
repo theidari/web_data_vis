@@ -11,7 +11,7 @@ The dataset reveals that a small handful of microbial species (also called opera
 
 <h4>How to Use Dashboard</h4>
 
-[Dashboard!](https://theidari.github.io/belly_button_biodiversity/)
+[Dashboard!](https://theidari.github.io/web_data_vis/belly_button_biodiversity/belly_button_biodiversity/)
 
 <h4>References</h4>
 [1] Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/<br>
