@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/header_main.png"></p>
+<p align="center"><img src="http://robdunnlab.com/wp-content/uploads/microbes-sem.jpg"></p>
 
 <h3>Belly Button Biodiversity</h3>
 
