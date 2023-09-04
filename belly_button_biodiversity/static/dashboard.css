@@ -41,7 +41,7 @@ body{
 /* hearder ------------------------------------------------------------------------------------- */
 /* header backgroung img and size */
 .dash-header{
-    background-image: URL(./asset/header_black_wallpaper.jpg);
+    background-image: URL(../asset/header_black_wallpaper.jpg);
     height:180px;
 }
 /* dashboard logo section */
